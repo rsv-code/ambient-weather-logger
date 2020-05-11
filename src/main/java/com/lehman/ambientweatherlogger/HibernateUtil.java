@@ -1,3 +1,19 @@
+/*
+ * Copyright 2020 Austin Lehman
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package com.lehman.ambientweatherlogger;
 
 import org.hibernate.SessionFactory;
@@ -31,7 +47,8 @@ public class HibernateUtil {
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
                 settings.put(Environment.HBM2DDL_AUTO, "update");
                 cfg.setProperties(settings);
-                cfg.addResource("DbDataRecord.hbm.xml");
+                cfg.addResource("DataRecord.hbm.xml");
+                cfg.addResource("DbDevice.hbm.xml");
                 ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(cfg.getProperties()).build();
                 sf = cfg.buildSessionFactory(serviceRegistry);

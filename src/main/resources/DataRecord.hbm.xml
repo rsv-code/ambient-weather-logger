@@ -1,8 +1,14 @@
 <hibernate-mapping package="com.lehman.ambientweatherlogger">
-    <class name="com.lehman.ambientweatherjava.DataRecord" table="datarecord">
-        <id name="dateutc" type="java.util.Date">
-            <column name="dateutc" sql-type="datetime"/>
+    <class name="com.lehman.ambientweatherjava.DataRecord" table="datarecords">
+        <id name="id" type="string">
+            <column name="id" sql-type="varchar(255)"/>
         </id>
+        <property name="deviceMac" type="string">
+            <column name="deviceMac" sql-type="varchar(255)" index="IDX_DEVICE_MAC"/>
+        </property>
+        <property name="dateutc" type="java.util.Date">
+            <column name="dateutc" sql-type="datetime" index="IDX_DATE_UTC"/>
+        </property>
         <property name="loc" type="string">
             <column name="loc" sql-type="varchar(255)"/>
         </property>

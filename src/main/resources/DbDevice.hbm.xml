@@ -1,0 +1,28 @@
+<hibernate-mapping package="com.lehman.ambientweatherlogger">
+    <class name="com.lehman.ambientweatherlogger.DbDevice" table="devices">
+        <id name="macAddress" type="string">
+            <column name="macAddress" sql-type="varchar(255)"/>
+        </id>
+        <property name="name" type="string">
+            <column name="name" sql-type="varchar(255)"/>
+        </property>
+        <property name="location" type="string">
+            <column name="location" sql-type="varchar(255)"/>
+        </property>
+        <property name="longitude" type="double">
+            <column name="longitude" sql-type="double"/>
+        </property>
+        <property name="latitude" type="double">
+            <column name="latitude" sql-type="double"/>
+        </property>
+        <property name="address" type="string">
+            <column name="address" sql-type="varchar(255)"/>
+        </property>
+        <property name="addressLocation" type="string">
+            <column name="addressLocation" sql-type="varchar(255)"/>
+        </property>
+        <property name="elevation" type="double">
+            <column name="elevation" sql-type="double"/>
+        </property>
+    </class>
+</hibernate-mapping>
