@@ -1,5 +1,9 @@
 package com.lehman.ambientweatherlogger;
 
+import com.lehman.ambientweatherjava.HttpStatusException;
+
+import java.io.IOException;
+
 public class Main {
 
     /**
@@ -10,10 +14,14 @@ public class Main {
      * -DapiKey=0e613c...2389b7
      * -DdeviceMac='EC:...:22,EC:...:21'
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException, HttpStatusException, IOException {
         String appKey = System.getProperty("appKey");
         String apiKey = System.getProperty("apiKey");
-        String deviceMac = System.getProperty("apiKey");
+        String deviceMac = System.getProperty("deviceMac");
+        String mysqlHost = System.getProperty("mysqlHost");
+        String mysqlDatabase = System.getProperty("mysqlDatabase");
+        String mysqlUserName = System.getProperty("mysqlUserName");
+        String mysqlPassword = System.getProperty("mysqlPassword");
 
         // Check for appKey and apiKey VM options.
         if (appKey == null || appKey.equals("")) {
@@ -30,6 +38,23 @@ public class Main {
             macList = deviceMac.split(",");
         }
 
-        AmbientWeatherLogger logger = new AmbientWeatherLogger(appKey, apiKey, macList);
+        if (mysqlHost == null || mysqlHost.equals("")) {
+            mysqlHost = "localhost";
+        }
+
+        if (mysqlDatabase == null || mysqlDatabase.equals("")) {
+            mysqlDatabase = "ambient_weather";
+        }
+
+        if (mysqlUserName == null || mysqlUserName.equals("")) {
+            mysqlUserName = "root";
+        }
+
+        if (mysqlPassword == null || mysqlPassword.equals("")) {
+            mysqlPassword = "root";
+        }
+
+        AmbientWeatherLogger logger = new AmbientWeatherLogger(appKey, apiKey, macList, mysqlHost, mysqlDatabase, mysqlUserName, mysqlPassword);
+        logger.collectLastRecord();
     }
 }

@@ -1,0 +1,85 @@
+<hibernate-mapping package="com.lehman.ambientweatherlogger">
+    <class name="com.lehman.ambientweatherjava.DataRecord" table="datarecord">
+        <id name="dateutc" type="java.util.Date">
+            <column name="dateutc" sql-type="datetime"/>
+        </id>
+        <property name="loc" type="string">
+            <column name="loc" sql-type="varchar(255)"/>
+        </property>
+        <property name="tempinf" type="java.lang.Double">
+            <column name="tempinf" sql-type="double"/>
+        </property>
+        <property name="humidityin" type="java.lang.Integer">
+            <column name="humidityin" sql-type="int"/>
+        </property>
+        <property name="baromrelin" type="java.lang.Double">
+            <column name="baromrelin" sql-type="double"/>
+        </property>
+        <property name="baromabsin" type="java.lang.Double">
+            <column name="baromabsin" sql-type="double"/>
+        </property>
+        <property name="tempf" type="java.lang.Double">
+            <column name="tempf" sql-type="double"/>
+        </property>
+        <property name="battout" type="java.lang.Integer">
+            <column name="battout" sql-type="int"/>
+        </property>
+        <property name="humidity" type="java.lang.Integer">
+            <column name="humidity" sql-type="int"/>
+        </property>
+        <property name="winddir" type="java.lang.Integer">
+            <column name="winddir" sql-type="int"/>
+        </property>
+        <property name="windspeedmph" type="java.lang.Double">
+            <column name="windspeedmph" sql-type="double"/>
+        </property>
+        <property name="windgustmph" type="java.lang.Double">
+            <column name="windgustmph" sql-type="double"/>
+        </property>
+        <property name="maxdailygust" type="java.lang.Double">
+            <column name="maxdailygust" sql-type="double"/>
+        </property>
+        <property name="hourlyrainin" type="java.lang.Double">
+            <column name="hourlyrainin" sql-type="double"/>
+        </property>
+        <property name="eventrainin" type="java.lang.Double">
+            <column name="eventrainin" sql-type="double"/>
+        </property>
+        <property name="dailyrainin" type="java.lang.Double">
+            <column name="dailyrainin" sql-type="double"/>
+        </property>
+        <property name="weeklyrainin" type="java.lang.Double">
+            <column name="weeklyrainin" sql-type="double"/>
+        </property>
+        <property name="monthlyrainin" type="java.lang.Double">
+            <column name="monthlyrainin" sql-type="double"/>
+        </property>
+        <property name="totalrainin" type="java.lang.Double">
+            <column name="totalrainin" sql-type="double"/>
+        </property>
+        <property name="solarradiation" type="java.lang.Double">
+            <column name="solarradiation" sql-type="double"/>
+        </property>
+        <property name="uv" type="java.lang.Integer">
+            <column name="uv" sql-type="int"/>
+        </property>
+        <property name="feelsLike" type="java.lang.Double">
+            <column name="feelsLike" sql-type="double"/>
+        </property>
+        <property name="dewPoint" type="java.lang.Double">
+            <column name="dewPoint" sql-type="double"/>
+        </property>
+        <property name="feelsLikein" type="java.lang.Double">
+            <column name="feelsLikein" sql-type="double"/>
+        </property>
+        <property name="dewPointin" type="java.lang.Double">
+            <column name="dewPointin" sql-type="double"/>
+        </property>
+        <property name="lastRain" type="string">
+            <column name="lastRain" sql-type="varchar(64)"/>
+        </property>
+        <property name="date" type="string">
+            <column name="date" sql-type="varchar(64)"/>
+        </property>
+    </class>
+</hibernate-mapping>
