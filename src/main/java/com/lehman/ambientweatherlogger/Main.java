@@ -20,6 +20,10 @@ import com.lehman.ambientweatherjava.HttpStatusException;
 
 import java.io.IOException;
 
+/**
+ * Main program entry point. The program expects some Java
+ * options passed in.
+ */
 public class Main {
 
     /**

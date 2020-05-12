@@ -75,7 +75,7 @@ public class AmbientWeatherLogger {
 
         for (String macAddress : localMacList) {
             System.out.println("Getting the last record for device: '" + macAddress + "'");
-            DataRecord[] records = this.aw.queryDeviceData(macAddress);
+            DataRecord[] records = this.aw.queryDeviceData(macAddress, 1);
 
             Transaction tr = null;
             try (Session session = this.factory.openSession()) {
