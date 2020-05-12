@@ -107,3 +107,5 @@ If you'd rather write your own app you're in luck because there's a connector
 that makes that easy. Head over to 
 [ambient-weather-java](https://github.com/rsv-code/ambient-weather-java).
 
+### License
+Copyright 2020 Austin Lehman. Licensed under the Apache License, Version 2.0
